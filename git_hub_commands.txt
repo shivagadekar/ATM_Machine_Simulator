@@ -48,4 +48,5 @@ In above line "git@github.com:shivagadekar/ATM_Machine_Simulator.git" is stored 
 5. git push origin master
 In above line we are requestion git to upload/push master branch on origin path i.e. out git hub repository.
 6. git pull origin master
+In above line, We are uploading all the changes made in Git Hub Repository.
 
