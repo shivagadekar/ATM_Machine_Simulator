@@ -1,15 +1,11 @@
-# ===============================***({ATM_MACHINE_UPDATE_V03})***==========================================
-# In this update, all Main menu's are defined under defined_functions, with their names
-# This also includes, Resend OTP feature.
-# Comparatively, Code is much easier to read and modify
-# In next version,
-# 1.    We'll try to add feature to View/add/update user data
-# 2.    Personnel information and ATM pin will be accessed with the help of CARD No only
-# 3.    Code will be able to access information of number of people, without hesitating
-# 4.    Ms-Excel may be used to store and access data
-# 5.    If statement asking for "is Card inserted", if Yes - Then Executed all code or Try again popup
-# 6.    Another Information regarding Update will be updated soon
-
+# TODO: Add json file format for saving user data on server
+# TODO: Convert This program into Function Programming
+# TODO: Remove Bugs that occurred while testing on local machine
+# TODO: Add GUI to this program using Tkinter
+# TODO: The app should look exact copy of real ATM Machine for Study Purpose Only and Practicing
+# TODO: Study Current Code as 5 months passed, after third revision of this file
+# TODO: Have Brainstorming session with self and use ATM for understanding more functions of ATM
+# TODO: Add two new features that you thing All ATM machines should have
 
 import time as t
 
