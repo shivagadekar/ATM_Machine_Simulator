@@ -7,8 +7,80 @@
 # TODO: Have Brainstorming session with self and use ATM for understanding more functions of ATM
 # TODO: Add two new features that you thing All ATM machines should have
 
+
 import time as t
 
+# Convert below portion into .json file and read data directly from json file.
+# Json file should include: 
+"""
+Account_number: {
+    account_no: 12312312313,
+    account_type: 'saving/current'
+    branch: BARB,
+    branch_address: 
+    ifsc: BARB000000,
+    uidai: 123412341234,
+    mobile_no: 8888888888,
+    email: 'rajaram@gmail.com',
+    fname: "Raj",
+    mname: "Ramesh",
+    sname: "Rampal",
+    acc_balance: 132156465413513.054,
+    dob: "20/12/1999",
+    pan: "QWER123QER",
+    occupation: "Student",
+    address: "Mumbai-412321",
+    nominee_added: "yes",
+    ac_open_date: 12/12/2012,
+    blood_group: "a-",
+    history:{
+        dd_mm_yyyy_hh_mm_ss:{
+            transition_id: 132132323213563513,
+            added: 13213,
+            withdrawn: 1231,
+        }
+    },
+    cards_allotaed: {
+        credit:{
+            credit_card_type: "platinum",
+            credit_card_no: 1323213,
+            name_on_card: "raj ramesh rampal",
+            card_limit: 20000,
+            amount_used: 10000,
+            due_amount: 0000.0,
+            card_issue_date: 12/12/2012,
+            card_exp_date: 11/12/2025,
+            cvv: 123123,
+            credit_card_password: 1234,
+            monthly_emi: 4225,
+            history:{
+                dd_mm_yyyy_hh_mm_ss:{
+                    transition_id: 132132323213563513,
+                    added: 13213,
+                    withdrawn: 1231,
+                }
+            }
+        },
+        debit:{
+            debit_card_type: "visa",
+            debit_card_no: 1323213,
+            name_on_card: "raj ramesh rampal",
+            debit_limit_daily: 20000,
+            card_issue_date: 12/12/2012,
+            card_exp_date: 11/12/2025,
+            cvv: 123123,
+            debit_card_password: 1234,
+            history:{
+                dd_mm_yyyy_hh_mm_ss:{
+                    transition_id: 132132323213563513,
+                    added: 13213,
+                    withdrawn: 1231,
+                }
+            },            
+        }
+    } 
+}    
+"""
 saving_account_balance = [200000]
 current_account_balance = [200000]
 atm_pin = [1234]
@@ -20,14 +92,25 @@ def card_insert_request():
 
 
 def card_detect_msg():
+    """ For this code, enter last four digit of card + phone No"""
     return print('Card Detected. Please Wait Some Time for Machine To Read Card !')
 
 
 def greeting_msg():
+    "Take name of user from json file and show in this greeting message"
     return print('Hello, Mr. Shivam Gadekar')
 
 
 def main_menu():
+    """
+    Initially work on menus of this windows.
+    First Screen Should be 
+        1. Select Account Type
+            1.1 Saving
+                1.1.1 Withdraw
+                1.1.2 Fast Withdraw
+            1.2 Current ... Add remaining Options and save in variable
+    """
     print('\nPlease Enter Number from Below List\n')
     # Check which operation user wants to perform
     print('1. Cash Withdraw \t\t\t\t\t'  # To withdraw cash from Account
@@ -39,6 +122,8 @@ def main_menu():
 
 
 def cash_withdraw():
+    """Use password and account balance from json to verify is user capable of withdrawing that amount 
+    of money. If yes then deduct that much amount of money from account."""
     # from which account, you want to withdraw money(saving or Current)
     print('Choose Account Type \n1. Saving \t\t\t\t\t\t\t2. Current')
     sub_choice = int(input('Your Choice : '))
@@ -81,6 +166,10 @@ def cash_withdraw():
 
 
 def fast_cash_withdraw():
+    """Use password and account balance from json to verify is user capable of withdrawing that amount 
+    of money. If yes then deduct that much amount of money from account.
+    show 6 fast withdraw money option."""
+
     choice3 = int(input('Please Choose Amount 1. 1000 2. 2000 3. Enter Your Amount'
                         'Note : Amount will be Deduced from Saving Account'))
     if saving_account_balance[0] > 2000:
@@ -103,6 +192,7 @@ def fast_cash_withdraw():
 
 
 def view_account_bal():
+    """Use password and account balance from json and then show account balance."""
     choice4 = int(input('Choose Account Type :\n1. Saving \2. Current'))
     if choice4 == 1:
         print('Your Saving Account Balance is : ', saving_account_balance[0], 'Dollers')
@@ -113,11 +203,14 @@ def view_account_bal():
 
 
 def view_trans_details():
+    """Use password and account balance from json and show last transition details."""
     t.sleep(2)
     print("You Don't Have Any Transition Details, We'll Do it Later, to Record History")
 
 
 def reset_pin():
+    """Use password and account balance from json to verify uidai, enter phone no and receive otp and enter
+    that otp in that file."""
     print('Enter Your Phone Number +91-********81')
     mobile_no = int(input('Enter Your Phone No : '))
     if mobile_no == 9860645981:
@@ -141,6 +234,7 @@ def reset_pin():
 
 
 while not done:
+    """Run all functions as per requirement."""
     card_insert_request()
     t.sleep(1)
     card_detect_msg()
