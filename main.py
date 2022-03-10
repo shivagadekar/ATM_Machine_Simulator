@@ -13,7 +13,7 @@ import time as t
 # Convert below portion into .json file and read data directly from json file.
 # Json file should include: 
 """
-Account_number: {
+account_no: {
     account_no: 12312312313,
     account_type: 'saving/current'
     branch: BARB,
@@ -30,7 +30,6 @@ Account_number: {
     pan: "QWER123QER",
     occupation: "Student",
     address: "Mumbai-412321",
-    nominee_added: "yes",
     ac_open_date: 12/12/2012,
     blood_group: "a-",
     history:{
@@ -40,14 +39,14 @@ Account_number: {
             withdrawn: 1231,
         }
     },
-    cards_allotaed: {
+    cards_allocated: {
         credit:{
             credit_card_type: "platinum",
             credit_card_no: 1323213,
             name_on_card: "raj ramesh rampal",
             card_limit: 20000,
             amount_used: 10000,
-            due_amount: 0000.0,
+            amount_to_pay: 0000.0,
             card_issue_date: 12/12/2012,
             card_exp_date: 11/12/2025,
             cvv: 123123,
@@ -65,7 +64,7 @@ Account_number: {
             debit_card_type: "visa",
             debit_card_no: 1323213,
             name_on_card: "raj ramesh rampal",
-            debit_limit_daily: 20000,
+            daily_debit_limit: 20000,
             card_issue_date: 12/12/2012,
             card_exp_date: 11/12/2025,
             cvv: 123123,
